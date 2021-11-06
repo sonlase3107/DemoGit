@@ -1,0 +1,39 @@
+<app-search-bar placeholder="Car Search" (inputString)="searchCar($event)" [option]="SearchBy"></app-search-bar>
+<div class="table100 ver1 m-b-110">
+    <div class="table100-head">
+        <table>
+            <thead>
+                <tr class="row100 head">
+                    <th class="cell100 column1">License Plate</th>
+                    <th class="cell100 column2">Car Type</th>
+                    <th class="cell100 column3">Car Color</th>
+                    <th class="cell100 column4">CAr Company</th>
+                    <th class="cell100 column5">Parking Lot</th>
+                    <th class="cell100 column6">Action</th>
+
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <div class="table100-body js-pscroll">
+        <table>
+            <tbody>
+                <tr class="row100 body">
+
+                    <td class="cell100 column1">28b-1128</td>
+                    <td class="cell100 column2">Truong Hai</td>
+                    <td class="cell100 column3">Bac</td>
+                    <td class="cell100 column4">Hoang Long</td>
+                    <td class="cell100 column5">Bai So 2</td>
+
+                    <td class="cell100 column6">
+                        <mat-icon (click)="edit(1)">settings</mat-icon>
+                        <mat-icon (click)="remove(1)">remove_circle_outline</mat-icon>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>

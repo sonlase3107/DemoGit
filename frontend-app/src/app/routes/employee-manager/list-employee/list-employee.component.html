@@ -1,0 +1,52 @@
+<app-search-bar placeholder="User Search" (inputString)="searchUser($event)"[option]="option"></app-search-bar>
+<div class="table100 ver1 m-b-110">
+    <div class="table100-head">
+        <table>
+            <thead>
+                <tr class="row100 head">
+                    <th class="cell100 column1">ID</th>
+                    <th class="cell100 column2">Name</th>
+                    <th class="cell100 column3">Date Of Birth</th>
+                    <th class="cell100 column4">Address</th>
+                    <th class="cell100 column5">Phone Number</th>
+                    <th class="cell100 column6">Department</th>
+                    <th class="cell100 column7">Action</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <div class="table100-body js-pscroll">
+        <table>
+            <tbody>
+                <tr class="row100 body" *ngFor="let i of listEmployee">
+
+                    <td class="cell100 column1">{{i.employeeId}}</td>
+                    <td class="cell100 column2">{{i.employeeName}}</td>
+                    <td class="cell100 column3">{{i.employeeBirthDate | date :'yyyy-MM-dd'}}</td>
+                    <td class="cell100 column4">{{i.employeeAddress}}</td>
+                    <td class="cell100 column5">{{i.employeePhone}}</td>
+                    <td class="cell100 column6">{{i.department}}</td>
+
+                    <td class="cell100 column7">
+                        <mat-icon (click)="edit(i.employeeId)">settings</mat-icon>
+                        <mat-icon (click)="remove(i.employeeId)">remove_circle_outline</mat-icon>
+                    </td>
+                </tr>
+                <!-- <tr class="row100 body">
+                    <td class="cell100 column1">1001</td>
+                    <td class="cell100 column1">Le Anh Son</td>
+                    <td class="cell100 column2">Employee</td>
+                    <td class="cell100 column3">Date of Birth</td>
+                    <td class="cell100 column4">Email</td>
+                    <td class="cell100 column5">Phone</td>
+                    <td class="cell100 column6">Address</td>
+                    <td class="cell100 column7">
+                        <mat-icon (click)="edit(1004)">settings</mat-icon>
+                        <mat-icon (click)="remove(1001)">remove_circle_outline</mat-icon>
+                    </td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+</div>

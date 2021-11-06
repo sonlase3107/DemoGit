@@ -1,0 +1,141 @@
+<mat-toolbar>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+    (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Employee</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <span>Wellcome</span>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <span>Logout</span>
+  </button>
+</mat-toolbar>
+<mat-drawer-container class="example-container">
+  <mat-drawer #drawer class="example-sidenav" mode="side" opened=true>
+    <div class="header-side-bar">
+      {{ACTION_CURRENT}}
+    </div>
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="nav-bar-items">
+            <mat-icon>people</mat-icon>
+            <span class="span-title-iteam">Employee Manager</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <button class="items-side-nav" (click)="navigate(OPTION_LIST_EMPLOYEE)">
+          <mat-icon>list</mat-icon>
+          EmployeeList
+        </button>
+        <button class="items-side-nav" (click)="navigate(OPTION_ADD_EMPLOYEE)">
+          <mat-icon>add</mat-icon>
+          Add Employee
+        </button>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <div class="parent-item-nav">
+            <mat-panel-title class="nav-bar-items">
+              <mat-icon> directions_car</mat-icon>
+              <span class="span-title-iteam">Car manager</span>
+            </mat-panel-title>
+          </div>
+        </mat-expansion-panel-header>
+        <button class="items-side-nav" (click)="navigate(OPTION_LIST_CAR)">
+          <mat-icon>list</mat-icon>
+          Car List
+        </button>
+        <button class="items-side-nav" (click)="navigate(OPTION_ADD_CAR)">
+          <mat-icon>add</mat-icon>
+          Add Car
+        </button>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <div class="parent-item-nav">
+            <mat-panel-title class="nav-bar-items">
+              <mat-icon>shopping_cart</mat-icon>
+              <span class="span-title-iteam">Booking Office Manager</span>
+            </mat-panel-title>
+          </div>
+        </mat-expansion-panel-header>
+        <button class="items-side-nav" (click)="navigate(OPTION_LIST_BOOKINGOFFICE)">
+          <mat-icon>list</mat-icon>
+          Booking Office List
+        </button>
+        <button class="items-side-nav" (click)="navigate(OPTION_ADD_BOOKINGOFFICE)">
+          <mat-icon>add</mat-icon>
+          Add Booking Office
+        </button>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <div class="parent-item-nav">
+            <mat-panel-title class="nav-bar-items">
+              <mat-icon> location_on</mat-icon>
+              <span class="span-title-iteam">Parking Lot Manager</span>
+            </mat-panel-title>
+          </div>
+        </mat-expansion-panel-header>
+        <button class="items-side-nav" (click)="navigate(OPTION_LIST_PARKING_LOT)">
+          <mat-icon>list</mat-icon>
+          Parking Lot List
+        </button>
+        <button class="items-side-nav" (click)="navigate(OPTION_ADD_PARKING_LOT)">
+          <mat-icon>add</mat-icon>
+          Add Parking Lot
+        </button>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <div class="parent-item-nav">
+            <mat-panel-title class="nav-bar-items">
+              <mat-icon>airplanemode_active</mat-icon>
+              <span class="span-title-iteam">Trip Manager</span>
+            </mat-panel-title>
+          </div>
+        </mat-expansion-panel-header>
+        <button class="items-side-nav" (click)="navigate(OPTION_LIST_TRIP)">
+          <mat-icon>list</mat-icon>
+          Trip List
+        </button>
+        <button class="items-side-nav" (click)="navigate(OPTION_ADD_TRIP)">
+          <mat-icon>add</mat-icon>
+          Add Trip
+        </button>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <div class="parent-item-nav">
+            <mat-panel-title class="nav-bar-items">
+              <mat-icon>payment</mat-icon>
+              <span class="span-title-iteam">Ticket Manager</span>
+            </mat-panel-title>
+          </div>
+        </mat-expansion-panel-header>
+        <button class="items-side-nav" (click)="navigate(OPTION_LIST_TICKET)">
+          <mat-icon>list</mat-icon>
+          Ticket List
+        </button>
+        <button class="items-side-nav" (click)="navigate(OPTION_ADD_TICKET)">
+          <mat-icon>add</mat-icon>
+          Add Ticket
+        </button>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+  </mat-drawer>
+  <router-outlet></router-outlet>
+</mat-drawer-container>

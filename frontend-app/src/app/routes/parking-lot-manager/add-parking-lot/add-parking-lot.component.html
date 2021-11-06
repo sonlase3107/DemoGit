@@ -1,0 +1,64 @@
+<div class="col-md-8">
+    <div class="card mb-3">
+        <div class="card-body" [formGroup]="profileForm">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Parking Name<span class="required-noti">(*)</span></h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <input type="text" class="form-control" formControlName="fullname" required placeholder="Enter Parking Lot">
+                </div>
+                <div class="notification" *ngIf="profileForm.value.fullname=='' &&isSubmited">
+                    <h5>{{NOTICE_FULLNAME}}</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Place <span class="required-noti">(*)</span></h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <select class="custom-select form-control" formControlName="department" required>
+                        <option [value]="d.name" *ngFor="let d of departmentData" [ngValue]="departmentData">{{d.name}}
+                        </option>
+                    </select>
+                </div>
+                <div class="notification" *ngIf="profileForm.value.department=='' &&isSubmited">
+                    <h5>{{NOTICE_DEPARTMENT}}</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Area <span class="required-noti">(*)</span></h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <input type="text" class="form-control" formControlName="password" placeholder="Enter area" required><span class="note">(m2)</span>
+                </div>
+                <div class="notification" *ngIf="profileForm.value.password=='' &&isSubmited">
+                    <h5>{{NOTICE_PASSWORD}}</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Price <span class="required-noti">(*)</span></h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <input type="text" class="form-control" formControlName="password" placeholder="Enter price" required><span class="note">(VNĐ)</span>
+                </div>
+                <div class="notification" *ngIf="profileForm.value.password=='' &&isSubmited">
+                    <h5>{{NOTICE_PASSWORD}}</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <button type="submit" (click)="reset()" class="btn btn-warning btn-sm">
+                        <mat-icon>refresh</mat-icon>Reset
+                    </button>
+                    <button type="submit" (click)="submit()" [disabled]="profileForm.invalid"
+                        class="btn btn-success btn-sm">
+                        <mat-icon>add</mat-icon>Add
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

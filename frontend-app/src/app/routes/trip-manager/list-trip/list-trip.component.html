@@ -1,0 +1,52 @@
+<!-- <app-search-bar placeholder="Parking Lot Search" (inputString)="searchUser($event)" [option]="option"></app-search-bar> -->
+<app-date-range placeholder="Trip Search" (inputString)="searchUser($event)" [option]="option" ></app-date-range>
+<div class="table100 ver1 m-b-110">
+    <div class="table100-head">
+        <table>
+            <thead>
+                <tr class="row100 head">
+                    <th class="cell100 column1">NO</th>
+                    <th class="cell100 column2">Destination</th>
+                    <th class="cell100 column3">Departure Time</th>
+                    <th class="cell100 column4">Driver</th>
+                    <th class="cell100 column5">Car Type</th>
+                    <th class="cell100 column6">Blocked Ticket Number</th>
+                    <th class="cell100 column7">Action</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <div class="table100-body js-pscroll">
+        <table>
+            <tbody>
+                <tr class="row100 body">
+                    <td class="cell100 column1">1</td>
+                    <td class="cell100 column2">Ga Lai</td>
+                    <td class="cell100 column3">10:30</td>
+                    <td class="cell100 column4">Tran Van Loc</td>
+                    <td class="cell100 column5">Giuong 50 CHo</td>
+                    <td class="cell100 column6">0</td>
+
+                    <td class="cell100 column7">
+                        <mat-icon (click)="edit(1)">settings</mat-icon>
+                        <mat-icon (click)="remove(1)">remove_circle_outline</mat-icon>
+                    </td>
+                </tr>
+                <!-- <tr class="row100 body">
+                    <td class="cell100 column1">1001</td>
+                    <td class="cell100 column1">Le Anh Son</td>
+                    <td class="cell100 column2">Employee</td>
+                    <td class="cell100 column3">Date of Birth</td>
+                    <td class="cell100 column4">Email</td>
+                    <td class="cell100 column5">Phone</td>
+                    <td class="cell100 column6">Address</td>
+                    <td class="cell100 column7">
+                        <mat-icon (click)="edit(1004)">settings</mat-icon>
+                        <mat-icon (click)="remove(1001)">remove_circle_outline</mat-icon>
+                    </td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+</div>

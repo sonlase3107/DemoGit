@@ -1,0 +1,22 @@
+<div class="form">
+    <label>Username:</label>
+    <input type="text" required placeholder="User Name" />
+
+    <label>Password:</label>
+    <input type="password" required placeholder="Password" />
+    <div v-if="error" class="error"></div>
+
+    <div class="terms">
+      <input type="checkbox"/>
+      <label>Remember Me</label>
+    </div>
+
+    <div class="submit">
+      <button (click)="navigate()">Login</button>
+    </div>
+    <div id="login-with">
+      <button class="btn btn-google" type="submit">
+        <i class="fab fa-google mr-2"></i> Register
+      </button>
+    </div>
+  </div>

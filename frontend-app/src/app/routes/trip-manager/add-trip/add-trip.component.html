@@ -1,0 +1,89 @@
+<div class="col-md-8">
+    <div class="card mb-3">
+        <div class="card-body" [formGroup]="profileForm">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Destination <span class="required-noti">(*)</span></h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <input type="text" class="form-control" formControlName="license" required
+                        placeholder="Enter Destination">
+                </div>
+                <div class="notification" *ngIf="profileForm.value.license=='' &&isSubmited">
+                    <h5>{{NOTICE_LICENSE}}</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Departure Time <span class="required-noti">(*)</span></h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <input matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </div>
+                <div class="notification">
+                    <h5></h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Driver</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <input type="text" class="form-control" formControlName="carcolor" required
+                        placeholder="Enter driver">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Car Type <span class="required-noti">(*)</span></h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <input type="text" class="form-control" formControlName="license" required
+                        placeholder="Enter Car Type">
+                </div>
+                <div class="notification" *ngIf="profileForm.value.license=='' &&isSubmited">
+                    <h5>{{NOTICE_LICENSE}}</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Maximum online ticket number <span class="required-noti">(*)</span></h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <input type="number" class="form-control" formControlName="license" required
+                        placeholder="Enter Destination">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Departure Date <span class="required-noti">(*)</span></h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker ></mat-datepicker>
+                      </mat-form-field>
+                </div>
+                <div class="notification" *ngIf="profileForm.value=='' &&isSubmited">
+                    <h5></h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <button type="submit" (click)="reset()" class="btn btn-warning btn-sm">
+                        <mat-icon>refresh</mat-icon>Reset
+                    </button>
+                    <button type="submit" (click)="submit()" [disabled]="profileForm.invalid"
+                        class="btn btn-success btn-sm">
+                        <mat-icon>add</mat-icon>Add
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

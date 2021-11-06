@@ -1,0 +1,136 @@
+<div class="col-md-8">
+    <div class="card mb-3">
+        <div class="card-body" [formGroup]="profileForm">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Full Name <span class="required-noti">(*)</span></h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <input type="text" class="form-control" formControlName="fullname" required>
+                </div>
+                <div class="notification" *ngIf="profileForm.value.fullname=='' &&isSubmited">
+                    <h5>{{NOTICE_FULLNAME}}</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Phone Number <span class="required-noti">(*)</span></h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <input type="text" class="form-control" formControlName="phone" required>
+                </div>
+                <div class="notification" *ngIf="profileForm.value.phone=='' &&isSubmited">
+                    <h5>{{NOTICE_PHONE}}</h5>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Date Of Birth <span class="required-noti">(*)</span></h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <input matInput [matDatepicker]="picker" formControlName="dob">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </div>
+                <div class="notification" *ngIf="profileForm.value.dob=='' &&isSubmited">
+                    <h5>{{NOTICE_DOB}}</h5>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Sex <span class="required-noti">(*)</span></h6>
+                </div>
+                <div class="col-sm-9 custom-control custom-radio inline">
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline1" value="m" name="gender"
+                            class="custom-control-input" formControlName="gender">
+                        <label class="custom-control-label" for="customRadioInline1">Male</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="nam" name="gender" value="f" class="custom-control-input"
+                            formControlName="gender">
+                        <label class="custom-control-label" for="customRadioInline2">Female</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Address <span class="required-noti">(*)</span></h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <input type="text" class="form-control" formControlName="address" required>
+                </div>
+                <div class="notification" *ngIf="profileForm.value.address=='' &&isSubmited">
+                    <h5>{{NOTICE_ADRESS}}</h5>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Email <span class="required-noti">(*)</span></h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <input type="text" class="form-control" formControlName="email" required>
+                </div>
+                <div class="notification" *ngIf="profileForm.value.email=='' &&isSubmited">
+                    <h5>{{NOTICE_EMAIL}}</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Account <span class="required-noti">(*)</span></h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <input type="text" class="form-control" formControlName="account" required>
+                </div>
+                <div class="notification" *ngIf="profileForm.value.account=='' &&isSubmited">
+                    <h5>{{NOTICE_ACCOUNT}}</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Password <span class="required-noti">(*)</span></h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <input type="text" class="form-control" formControlName="password" required>
+                </div>
+                <div class="notification" *ngIf="profileForm.value.password=='' &&isSubmited">
+                    <h5>{{NOTICE_PASSWORD}}</h5>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Department <span class="required-noti">(*)</span></h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <select class="custom-select form-control" formControlName="department" required>
+                        <option [value]="d.name" *ngFor="let d of departmentData">{{d.name}}
+                        </option>
+                    </select>
+                </div>
+                <div class="notification" *ngIf="profileForm.value.department=='' &&isSubmited">
+                    <h5>{{NOTICE_DEPARTMENT}}</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <button type="submit" (click)="back()" class="btn btn-primary btn-sm">
+                        <mat-icon>backspace</mat-icon>Back
+                    </button>
+                    <button type="submit" (click)="reset()" class="btn btn-warning btn-sm">
+                        <mat-icon>refresh</mat-icon>Reset
+                    </button>
+                    <button type="submit" (click)="submit()" [disabled]="profileForm.invalid"
+                        class="btn btn-success btn-sm">
+                        <mat-icon>add</mat-icon>Add
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
